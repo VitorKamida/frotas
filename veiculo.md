@@ -24,6 +24,10 @@ Token de autenticação JWT.
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
+{% api-method-parameter name="descricao" type="string" required=false %}
+Breve descrição
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="placa" type="string" required=true %}
 Placa do registro do veículo.
 {% endapi-method-parameter %}
