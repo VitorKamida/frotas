@@ -1,9 +1,10 @@
--
---
-description: CRUD - Veículo
----
-
 # Veículo
+
+### -
+
+### description: CRUD - Veículo
+
+## Veículo
 
 {% api-method method="post" host="https://api.brschaffen-it.com" path="/api/frota/veiculo" %}
 {% api-method-summary %}
@@ -144,7 +145,7 @@ Token de autenticação JWT.
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="placa" type="string" required=false%}
+{% api-method-parameter name="placa" type="string" required=false %}
 Placa do registro do veículo.
 {% endapi-method-parameter %}
 
@@ -180,7 +181,7 @@ Renavam do veículo.
 NIV do veículo.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="km\_inicial" type="number" required=false%}
+{% api-method-parameter name="km\_inicial" type="number" required=false %}
 Quilometragem inicial do veículo.
 {% endapi-method-parameter %}
 
@@ -246,5 +247,73 @@ Could not find a cake matching this query.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+{% api-method method="get" host="https://api.brschaffen-it.com" path="/api/frota/veiculo/:codigo" %}
+{% api-method-summary %}
+
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Authentication" type="string" required=true %}
+Token de autenticação JWT
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+ "status":true,
+ "data":{
+  "codigo": "1",
+  "placa": "ABC1234",
+  "modelo": "Del Rey",
+  "municipio": "Ponta Grossa",
+  "uf": "PR",
+  "cor": "Azul Bebê",
+  "ano": "1987",
+  "numero": "FROTA01",
+  "renavam": "12345678910",
+  "chassi": "9BWZZZ377VT004251",
+  "km_inicial": "300000,00",
+  "tipo_combustivel": "1",
+  "proprietario": "1",
+  "seguradora": "230"
+ },
+ "errors":{},
+ "message":""
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+ "status":false,
+ "data":{},
+ "errors":{},
+ "message":"Veiculo não encontrado"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
 
 
